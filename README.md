@@ -1,84 +1,163 @@
-# Interport-Cargo-Services-Enterprise-Solution
-### Queensland University of Technology (QUT)
-
-## Project Overview
-
-This repository contains the deliverables for **Assessment Task 1** of **IAB251 – Enterprise Systems Development**.  
-The project is based on **Interport Cargo Services**, a prominent player in the **Freight Forwarding and Customs Brokerage** industry.  
-The objective is to design a new **Enterprise System** that enhances automation, productivity, and efficiency across InterportCargo’s key business processes.
+# Interport Cargo Enterprise Management System  
+*Enterprise Solution Design & Agile Prototype Development*  
+*Laravel 9.19 • MySQL • Node.js • ASP.NET Core Razor • Azure DevOps • Figma*
 
 ---
 
-## Task Description
+## Overview
 
-Interport Cargo currently operates both manual and automated systems but seeks to develop a unified enterprise solution to address growing business demands.
+This repository documents the **design and agile prototype development** of a new **Enterprise Management System (EMS)** for **Interport Cargo Services**, a leading Australian freight forwarding and customs brokerage organization.  
 
-Your development team has been contracted to design this new system, focusing on:
-- Streamlining customer interactions and quotation processes  
-- Enabling online job booking  
-- Managing the outturn process efficiently  
-
-The outcome includes **requirement gathering, system design, prototype UI wireframes, and a client presentation video**.
+The system modernizes critical customer and logistics workflows by integrating **Quotation Management**, **Job Booking**, and **Outturn Processing** into a single digital platform.  
+The project was delivered using an **Agile SCRUM framework** over multiple sprints, progressing from concept design to a fully functional prototype.
 
 ---
 
-## Project Scope
+## Phase 1 – Enterprise Solution Design (Assessment Task 1)
 
-**Organization:** Interport Cargo Services  
-**Industry:** Freight Forwarding, Customs Brokerage, AQIS Logistics  
-**Key Focus Areas:**
-1. **3.1.1 – Quotation to Perform a Job**
-2. **3.1.2 – Booking a New Job**
-3. **3.3.1 – The Process of Outturn**
+### Objectives
+- Conduct requirement analysis and system design for Interport Cargo’s digital transformation initiative.  
+- Develop **business capability maps**, **user stories**, **acceptance criteria**, and **solution architecture**.  
+- Deliver UML models, medium-fidelity wireframes, and a client presentation demonstrating system feasibility.
 
-Each team member is assigned to one of the above process areas.
+### Key Deliverables
+| Category | Deliverable |
+|-----------|-------------|
+| **Business Analysis** | Capability mapping (L1 & L2), process decomposition, requirement prioritization |
+| **Requirements Engineering** | User roles, epics, features, user stories, acceptance criteria |
+| **Architecture Design** | Layered solution architecture (presentation, application, data, integration layers) |
+| **System Modelling** | UML class, activity, and sequence diagrams |
+| **UI/UX** | Medium-fidelity wireframes and style guide (Figma) |
+| **Client Demonstration** | 20-minute presentation and design documentation bundle |
 
----
-
-## Project Stages
-
-### **Task 1 – Understanding Project Scope and Environment (Team)**
-- Develop a **Business Capability Map (L1 & L2)**  
-- Classify capabilities as **Strategic, Value-Added, or Support**  
-- Identify which Level 2 capabilities can be supported by enterprise systems  
-
-### **Task 2 – Requirement Gathering and Analysis (Team)**
-- Identify user types for each business process  
-- Develop **Epics, Features, and User Stories**  
-- Create **Acceptance Criteria** for three stories per process  
-- Classify **Functional and Non-Functional Requirements**  
-- Prioritize requirements using suitable techniques (e.g., MoSCoW)  
-- Implement in **Azure Boards**
-
-### **Task 3 – Detailed Design (Team + Individual)**
-- Create **Solution Architecture Diagram**  
-- Develop **UML Class Diagram** (shared for all three processes)  
-- Design **Activity Diagrams** and **Sequence Diagrams** (individual per process)  
-- Document assumptions and design justifications  
-
-### **Task 4 – User Interface Design (Team + Individual)**
-- Create **Medium-Fidelity Wireframes** using Figma, Balsamiq, or similar  
-- Ensure UI consistency across all modules  
-- Align with user requirements for all three process areas  
-
-### **Task 5 – Video Presentation (Team + Individual)**
-- 15–25 minute presentation demonstrating:
-  - Requirement analysis outcomes  
-  - System design and prototype  
-  - Business justification and expected benefits  
-- Each member presents and appears on camera  
+### Technology Stack
+- **Backend Framework:** Laravel 9.19 (PHP MVC)  
+- **Database:** MySQL 8  
+- **Frontend:** Blade Templates + Node.js Toolchain  
+- **Project Management:** Azure Boards (Azure DevOps)  
+- **Design Tools:** Figma • Draw.io • Visual Paradigm  
+- **Version Control:** Git / GitHub  
 
 ---
 
-## Learning Outcomes
+## Phase 2 – Agile Development Sprint 1 (Assessment Task 2)
 
-| Code | Description |
-|------|--------------|
-| **ULO 1** | Explain software engineering principles in Enterprise Systems supporting business processes |
-| **ULO 2** | Apply industry best practices for design and development of Enterprise Systems |
-| **ULO 5** | Demonstrate teamwork and collaboration in high-performing project environments |
+### Sprint Context
+Following approval of the design proposal, Interport Cargo commissioned a working prototype of the **Quotation Module**.  
+The sprint ran from **15 September – 25 October 2025** (≈ 5 weeks) under the **SCRUM framework**, with weekly scrum meetings, sprint backlog tracking, and progressive delivery.  
+The deliverable: a **functional prototype** demonstrating quotation workflows from registration to quotation issuance.
+
+---
+
+### Sprint Scope — User Stories
+
+#### **Team User Stories (T1–T5)**
+| ID | Role | Goal |
+|----|------|------|
+| **T1** | User (Customer / Employee) | Access the main dashboard for registration, login, and quotation requests. |
+| **T2** | New Customer | Register details (first name, family name, email, phone, company, address, password). Passwords are hashed; email is the username. |
+| **T3** | New Employee | Register details including role (Admin, Quotation Officer, Booking Officer, Warehouse Officer, Manager, CIO). |
+| **T4** | User | Log out securely from the system. |
+| **T5** | Quotation Officer | View all quotations with quotation number, client name, date issued, and status (Accept/Reject/Pending). |
+
+#### **Individual User Stories (I1–I6) – Quotation Module (3.1.1)**  
+| ID | Role | Description |
+|----|------|-------------|
+| **I1** | Existing Customer | Log in using validated credentials and access “Request Quotation.” |
+| **I2** | Customer | Submit quotation request with request ID, source, destination, container count, package type, and job nature (import/export, packing, quarantine). |
+| **I3** | Quotation Officer | Review quotation requests and accept/reject; notify customers of decision. |
+| **I4** | Quotation Officer | Access Rate Schedule and generate quotation with charges and container details. |
+| **I5** | Quotation Officer | Apply discount alerts based on job nature (per Appendix criteria) and submit final quotation. |
+| **I6** | Customer | View received quotation and respond (accept/reject); notify officer of status update. |
+
+---
+
+### Sprint Deliverables
+
+#### **Task 1 – Agile Development**
+- Conducted weekly **SCRUM meetings** (one-page reports each week) covering progress, issues, and next steps.  
+- Followed Agile iterations through Azure Boards for backlog management and sprint review.
+
+#### **Task 2 – Prototype Development**
+
+**2.1 User Interface Development**
+- Developed ASP.NET Core Razor pages for core functions (registration, login, quotation workflow).  
+- Implemented consistent navigation and layout aligned with UI/UX principles.  
+
+**2.2 Functional Development**
+- C# controllers and Entity Framework Core data flows using SQL Server / SQLite.  
+- Modular logic per user story to support login, request submission, quotation processing, and notifications.  
+
+**2.3 Code Quality**
+- Refactored code per C# best practices and naming conventions.  
+- Added XML documentation comments for public classes, methods, and key functions.  
+
+**2.4 Testing**
+- Performed black-box unit tests for selected user stories.  
+- Verified data validation logic and quotation workflow consistency.
+
+---
+
+### Sprint Timeline
+
+| Week | Focus | Output |
+|------|--------|---------|
+| **Week 9** | Sprint Planning & Setup | Backlog refinement, story assignment, Azure Boards setup |
+| **Weeks 10–13** | Prototype Development (+ Mid-Break Extension) | Progressive UI and functionality builds |
+| **Week 14** | Finalization & Testing | Integration testing and demo preparation |
+
+---
+
+### Project Management
+- **Framework:** SCRUM (Weekly sprint reviews and retrospectives)  
+- **Tools:** Azure Boards for sprint tracking and task ownership  
+- **Meetings:** Weekly team SCRUM reports documented and reviewed by product owner  
 
 ---
 
 ## Repository Structure
 
+
+---
+
+## Tools & Technologies
+
+| Category | Technology |
+|-----------|-------------|
+| **Frontend** | ASP.NET Core Razor • HTML • CSS • Bootstrap |
+| **Backend** | C# .NET Core • Entity Framework Core |
+| **Database** | SQL Server / SQLite |
+| **Architecture Design** | Draw.io • Visual Paradigm |
+| **UX Design** | Figma |
+| **Project Management** | Azure DevOps Boards |
+| **Version Control** | Git / GitHub |
+| **Testing** | xUnit / MSTest for unit tests |
+
+---
+
+## Learning Outcomes Applied
+
+- **ULO 3** – Justify recommended models and how they address organizational needs.  
+- **ULO 4** – Configure fit-for-purpose enterprise systems.  
+- **ULO 5** – Provide justified recommendations for future extensions.  
+- **ULO 6** – Communicate professionally in written and visual formats to stakeholders.  
+
+---
+
+## License
+
+© 2025 Interport Cargo Enterprise System Design Project.  
+All materials are for **educational and portfolio demonstration purposes only**.
+
+---
+
+## Contact
+
+**Ray Jui-Sheng (Ray) Chiang**  
+[chiangjuisheng@gmail.com]  
+[https://github.com/raychiang](https://github.com/raychiang)  
+[LinkedIn](https://www.linkedin.com/in/ray-chiang-9b3449305/)
+
+---
+
+> *A professional enterprise-grade system prototype demonstrating agile delivery, enterprise architecture, and full-stack development practices within a real logistics context.*
